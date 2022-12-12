@@ -7,6 +7,10 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Simon</h1>
+    <h1>Este es el primer enlace : {{primer_enlace}}</h1>
+    <h2>Enlaces encontrados</h2>
+    {% for enlace in enlaces_encontrados %}
+        <p>{{enlace}}</p>
+    {% endfor %}
 </body>
 </html>
