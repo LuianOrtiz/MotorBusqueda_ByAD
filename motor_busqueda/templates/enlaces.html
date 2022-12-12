@@ -4,13 +4,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Enlaces Similares</title>
 </head>
 <body>
     <h1>Este es el primer enlace : {{primer_enlace}}</h1>
-    <h2>Enlaces encontrados</h2>
+    <h2>Enlaces de Startups que te pueden interesar</h2>
     {% for enlace in enlaces_encontrados %}
         <p>{{enlace}}</p>
     {% endfor %}
+
+    <form action="{% url 'busqueda_enlaces' %}" method="post">
+        {% csrf_token %}
+        <button type="submit">Analizar enlaces</button>
+    </form>
 </body>
 </html>

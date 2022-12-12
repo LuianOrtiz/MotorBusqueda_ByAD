@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Startups</title>
+</head>
+<body>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+    <h1>Tabla de las startups encontradas</h1>
+
+    <ul>
+        <li><a href="{% url 'index' %}">Inicio</a></li>
+    </ul>
+    <div class="tabla_startups">
+        <table>
+            <tr>
+                <th>Url</th>
+                <th>Tittle</th>
+                <th>Nombre de la Startup</th>
+                <th>Descripcion</th>
+            </tr>
+            {% for startup in startups %}
+            <tr>
+                <th>{{startup.url}}</th>
+                <th>{{startup.palabra_1}}</th>
+                <th>{{startup.palabra_2}}</th>
+                <th>{{startup.palabra_3}}</th>
+            </tr>
+            {% endfor %}
+        </table>
+
+    </div>
+    
+</body>
+</html>
